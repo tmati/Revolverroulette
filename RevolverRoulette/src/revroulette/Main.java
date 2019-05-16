@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Plays a roulette game between players.
+ * 
+ * @author Topi Matikainen
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -19,7 +25,7 @@ public class Main {
 		players.add(p4);
 		players.add(p5);
 
-		Revolver revolver = new Revolver();
+		Revolver revolver = Revolver.getInstance();
 
 		revolver.checkChambers();
 

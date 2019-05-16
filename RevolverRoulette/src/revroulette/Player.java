@@ -1,5 +1,11 @@
 package revroulette;
 
+/**
+ * Player with name information
+ * 
+ * @author Topi Matikainen
+ *
+ */
 public class Player {
 	
 	private String name;
