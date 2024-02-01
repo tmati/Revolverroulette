@@ -10,7 +10,7 @@ import java.util.LinkedList;
  *
  */
 public class Revolver {
-	int cylinderSize = 5;
+	private int cylinderSize = 5;
 	LinkedList<Chamber> Cylinder = new LinkedList<Chamber>();
 	boolean isReady = false;
 	boolean hasBulletsLeft = false;
@@ -32,10 +32,10 @@ public class Revolver {
 	 * @return
 	 */
 	public static Revolver getInstance() {
-		if (REVOLVER != null)
+		if (REVOLVER == null) {
 			REVOLVER = new Revolver();
+		}
 		return REVOLVER;
-
 	}
 	
 	/**
@@ -50,12 +50,14 @@ public class Revolver {
 				chamber.setLoaded(true);
 				Cylinder.add(chamber);
 			}
+
 		for (; leftEmpty >= 0; leftEmpty--) {
 				Cylinder.add(new Chamber());
 		}
 		Collections.shuffle(Cylinder);
 		isReady = true;
 	}
+	
 
 	/**
 	 * Cycles the revolver.
@@ -96,4 +98,13 @@ public class Revolver {
 		}
 		return false;
 	}
+	
+	public int getCylinderSize() {
+		return cylinderSize;
+	}
+
+	public void setCylinderSize(int cylinderSize) {
+		this.cylinderSize = cylinderSize;
+	}
+	
 }
